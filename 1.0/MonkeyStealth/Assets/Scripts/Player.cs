@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         Guard.OnGuardHasSpottedPlayer += Disabled;
+        Exit.OnPLayerExit += PlayerExit;
     }
 
     void Update()
@@ -58,8 +59,14 @@ public class Player : MonoBehaviour {
         disabled = true;
     }
 
+    void PlayerExit()
+    {
+        print("PlayerExit"); 
+    }
+
     private void OnDestroy()
     {
         Guard.OnGuardHasSpottedPlayer -= Disabled;
+        Exit.OnPLayerExit -= PlayerExit;
     }
 }
