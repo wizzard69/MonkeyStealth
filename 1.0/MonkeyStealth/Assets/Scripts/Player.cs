@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
     public float moveSpeed = 7f;
     public float smoothMoveTime = 0.1f;
     public float turnSpeed = 8f;
-
+    
     float smoothInputMagnitude;
     float smoothMoveVelocity;
     float angle;
